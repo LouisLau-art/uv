@@ -103,13 +103,6 @@ pub(crate) async fn add(
     printer: Printer,
     preview: Preview,
 ) -> Result<ExitStatus> {
-    if bounds.is_some() && !preview.is_enabled(PreviewFeatures::ADD_BOUNDS) {
-        warn_user_once!(
-            "The `bounds` option is in preview and may change in any future release. Pass `--preview-features {}` to disable this warning.",
-            PreviewFeatures::ADD_BOUNDS
-        );
-    }
-
     if !preview.is_enabled(PreviewFeatures::EXTRA_BUILD_DEPENDENCIES)
         && !settings.resolver.extra_build_dependencies.is_empty()
     {
