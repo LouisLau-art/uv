@@ -6681,6 +6681,8 @@ name = "uv-preview"
 version = "0.0.15"
 dependencies = [
  "bitflags 2.10.0",
+ "enumflags2",
+ "itertools 0.14.0",
  "thiserror 2.0.17",
  "uv-warnings",
 ]
